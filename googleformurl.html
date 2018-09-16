@@ -349,6 +349,9 @@
   var input =
     document.getElementById("moo"); // "moo" is the 'id' of the text field
  //  input.value = document.referrer;
-    input.value = window.document.URL;
+  //  input.value = window.document.URL;
+  input.value =
+  //var url =
+  (window.location != window.parent.location) ? document.referrer: document.location.href;
 
 </script>
