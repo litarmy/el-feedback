@@ -348,7 +348,7 @@
 <script>
   var input =
     document.getElementById("moo"); // "moo" is the 'id' of the text field
-  input.value = document.referrer;
+ // input.value = document.referrer;
   //  input.value = window.document.URL;
  // input.value = document.location.hash;
 
@@ -357,7 +357,7 @@
 //input.value =  window.location.hash;
   //var url =
   //(window.location != window.parent.location) ? document.referrer: document.location.href;
-  // input.value =
-//    (window.location != window.parent.location) ? document.referrer: document.location.hash;
+   input.value =
+  (window.location != window.parent.location) ? document.referrer: document.location.hash;
 
 </script>
