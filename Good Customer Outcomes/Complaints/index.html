@@ -1,0 +1,399 @@
+<style>
+  /* GENERAL */
+
+  body {
+    background: #FFD900;
+    font-family: 'Source Sans Pro', sans-serif;
+    overflow: hidden;
+
+  }
+
+  *:focus {
+    outline-color: #ccc;
+  }
+
+  /* SECTION WRAPPER */
+
+  .wrapper {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* TYPOGRAPHY */
+
+  form p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    margin: 50px 0 20px;
+    line-height: 1.6;
+  }
+
+  form p,
+  label[for="comfort"],
+  label[for="explain"] {
+    padding-bottom: 6px;
+
+  }
+
+  ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #999;
+    font-style: italic;
+  }
+
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #999;
+    font-style: italic;
+  }
+
+  :-ms-input-placeholder {
+    /* IE 10+ */
+    color: #999;
+    font-style: italic;
+  }
+
+  :-moz-placeholder {
+    /* Firefox 18- */
+    color: #999;
+    font-style: italic;
+  }
+
+  /* SECTION */
+
+  section {
+    background: #FFD900;
+    padding: 0px 0;
+  }
+
+  /* FORM STYLES */
+
+  .input-wrap {
+    margin-bottom: 10px;
+  }
+
+  select {
+    display: block;
+    margin-bottom: 50px;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    margin-right: 5px;
+  }
+
+  label[for="comfort"],
+  label[for="explain"] {
+    display: block;
+    margin-bottom: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  input[type="text"],
+  textarea {
+    color: #444444;
+    width: 70%;
+    padding: 6px;
+    font-size: 16px;
+    border: 1px solid #44C0FF;
+    background: #E5EDF8;
+    margin-bottom: 10px;
+  }
+
+  input[type="text"] {
+    width: 50%;
+  }
+
+  .input-wrap.select-box {
+    border: 1px solid #00BF8F;
+    background: #DAEAE6;
+    width: 50%;
+    height: 34px;
+    padding: 0px 10px;
+    margin-bottom: 50px;
+  }
+
+  .input-wrap.select-box:hover {
+    background: #00BF8F;
+  }
+
+  .input-wrap.select-box:hover select {
+    color: #fff;
+  }
+
+  textarea {
+    display: block;
+    margin: 20px auto 15px;
+    min-height: 50px;
+  }
+
+  select {
+    border: none;
+    background: transparent;
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 0.5px;
+    height: 34px;
+    width: 100%;
+  }
+
+  select:hover {
+    cursor: pointer;
+  }
+
+  input[type="submit"] {
+    display: block;
+    margin: 0px auto 0px;
+    height: 34px;
+    width: 100px;
+    font-family: 'Source Sans Pro', sans-serif;
+    background: #004FB6;
+    border: 0px solid;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+
+  input[type="submit"]:hover {
+    background: #02469E;
+    cursor: pointer;
+  }
+
+  /* SLIDER */
+
+  input[type="range"] {
+    position: relative;
+    margin: 0 90px;
+  }
+
+  input[type="range"]:before,
+  input[type="range"]:after {
+    position: absolute;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    top: -7px;
+    color: #004FB6;
+    font-style: bold;
+  }
+
+  input[type="range"]:before {
+    content: "1";
+    left: -40px;
+  }
+
+  input[type="range"]:after {
+    content: "10";
+    right: -50px;
+  }
+
+  input[type="range"] {
+    -webkit-appearance: none !important;
+    display: block;
+    margin: 15px auto 0px;
+    height: 10px;
+    width: 60%;
+    background: #44C0FF;
+    border: 1px solid #004FB6;
+    border-radius: 10px;
+    display: block;
+  }
+
+  input[type="range"]:focus {
+    outline: none;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background: #44C0FF;
+    height: 35px;
+    width: 35px;
+    border: 10px solid #004FB6;
+    border-radius: 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  input[type="range"]::-webkit-slider-thumb:hover,
+  input[type="range"]::-webkit-slider-thumb:active {
+    height: 35px;
+    width: 35px;
+    border: 20px solid #004FB6;
+    border-radius: 20px;
+    background: #004FB6;
+  }
+
+  /* THUMBS */
+
+  @charset "UTF-8";
+  .emoji-toggle {
+    position: relative;
+    width: 100px;
+    margin: 20px auto;
+  }
+
+  .emoji-toggle .well {
+    display: block;
+    background: #004FB6;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .emoji-toggle .toggle {
+    opacity: 0;
+    border: 0;
+    outline: none;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    position: absolute;
+    cursor: pointer;
+    z-index: 100;
+  }
+
+  .emoji-toggle .toggle~.emoji:before {
+    content: "\01F431";
+    position: absolute;
+    left: 0;
+    top: -20px;
+    font-size: 55px;
+    transition: 0.2s;
+  }
+
+  .emoji-toggle .toggle:checked~.emoji:before {
+    left: 100%;
+    margin-left: -1em;
+  }
+
+  .emoji-toggle .toggle~label {
+    white-space: nowrap;
+  }
+
+  .emoji-toggle .toggle~label:before {
+    position: absolute;
+    right: 100%;
+    margin-right: 10px;
+    top: 0;
+  }
+
+  .emoji-toggle .toggle~label:after {
+    position: absolute;
+    left: 100%;
+    margin-left: 10px;
+    top: 0;
+  }
+
+  .emoji-vote .toggle~.emoji:before {
+    content: "\01F44D";
+  }
+
+  .emoji-vote .toggle:checked~.emoji:before {
+    content: "\01F44E";
+    top: -15px;
+
+  }
+
+  .emoji-vote .toggle~label:before {
+    content: "Yay";
+    opacity: .4;
+    display: block;
+    font-size: 16px;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align:center;
+    vertical-align: middle;
+    color: #ffffff;
+    background: #004FB6;
+    margin-top: 5px;
+    height: 30px;
+    line-height: 28px;
+    width: 40px;
+    border-radius: 6px;
+    border: 0px solid;
+    cursor: pointer;
+  }
+
+  .emoji-vote .toggle~label:after {
+    content: "Nay";
+    display: block;
+    font-size: 16px;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align:center;
+    vertical-align: middle;
+    color: #ffffff;
+    background: #004FB6;
+    margin-top: 5px;
+    height: 30px;
+    line-height: 28px;
+    width: 40px;
+    border-radius: 6px;
+    border: 0px solid;
+    cursor: pointer;
+  }
+
+  .emoji-vote .toggle:checked~label:before {
+    opacity: 1;
+  }
+
+  .emoji-vote .toggle:checked~label:after {
+    opacity: .4;
+  }
+  
+</style>
+
+<section>
+  <div class="wrapper">
+    <!-- START CODING YOUR FORM -->
+
+    <script type="text/javascript">
+      var submitted = false;
+    </script>
+
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {javascript:document.write('<h4>Thank you for your feedback!</h4>'); javascript:document.documentElement.style.background = '#FFD900'; }"></iframe>
+
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSfv2zSyD0Y7nmavdlPPGqfXrLV9PEhL8d4PxjM8zEkFfW4VhA/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
+
+      <div class="emoji-toggle emoji-vote">
+        <input type="checkbox" name="entry.40731126" id="toggle4" value="Nay" class="toggle" />
+
+        <div class="emoji"></div>
+
+        <label for="toggle4" class="well"></label>
+      </div>
+
+      <p id="text" style="display:none">Nay</p>
+
+      <!-- MULTI-LINE TEXT FIELD -->
+      <textarea name="entry.1234638059" id="explain" name="fname" placeholder="We'd love it if you could tell us why... (optional)" /></textarea>
+
+      <!-- URL -->
+
+      <input type='hidden' id="moo" name='entry.224338470' value='moo' />
+
+      <!-- Manually enter page name here -->
+      <input type='hidden' name='entry.1305316121' value='AG-UK-GCO-Complaints' />
+
+      <!-- SUBMIT BUTTON -->
+      <input class="button" type='submit' name='submit' value="Submit">
+
+    </form>
+
+  </div>
+</section>
+
+<script>
+  var input =
+    document.getElementById("moo"); // "moo" is the 'id' of the text field
+  // input.value = document.referrer;
+  //  input.value = window.document.URL;
+  // input.value = document.location.hash;
+  //input.value =  window.location.href;
+  //input.value =  window.location.hash;
+  //var url =
+  //(window.location != window.parent.location) ? document.referrer: document.location.href;
+  input.value =
+    (window.location != window.parent.location) ? document.referrer : document.location.hash;
+</script>
